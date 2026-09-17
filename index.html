@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlassTodo · Premium Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated background blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="app-container">
+    <div class="todo-card">
+      <header class="app-header">
+        <div class="logo-row">
+          <div class="logo-icon">✦</div>
+          <div>
+            <h1>glass<span>todo</span></h1>
+            <p class="subtitle">premium task manager</p>
+          </div>
+        </div>
+        <div class="progress-ring" id="progressRing">
+          <svg viewBox="0 0 36 36">
+            <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="ring-fill" id="ringFill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="ring-text" id="ringText">0%</span>
+        </div>
+      </header>
+
+      <div class="input-section">
+        <input type="text" id="todoInput" placeholder="What needs to be done?" autocomplete="off" maxlength="100" aria-label="New task">
+        <button id="addBtn" class="add-btn" aria-label="Add task">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div id="messageBox" class="message-box"></div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">
+          <span class="filter-count" id="countAll">0</span> All
+        </button>
+        <button class="filter-btn" data-filter="active">
+          <span class="filter-count" id="countActive">0</span> Active
+        </button>
+        <button class="filter-btn" data-filter="completed">
+          <span class="filter-count" id="countCompleted">0</span> Done
+        </button>
+      </div>
+
+      <ul id="todoList" class="todo-list"></ul>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </div>
+        <p id="emptyMessage">Your task list is empty</p>
+        <span class="empty-hint">Add your first task to get started</span>
+      </div>
+
+      <footer class="stats-footer">
+        <div class="stats-info">
+          <span class="dot"></span>
+          <span id="taskCount">0 tasks</span>
+        </div>
+        <button id="clearCompletedBtn" class="clear-btn" aria-label="Clear completed">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          Clear done
+        </button>
+      </footer>
+    </div>
+    <p class="made-with">Made with <span>♥</span> · vanilla JS</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
